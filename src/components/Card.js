@@ -15,7 +15,7 @@ function Card() {
 
   return (
     <>
-      <div className="card my-3">
+      <div className="card my-3" >
         <h3 className="card-header">Enter Today's Expense</h3>
         <div className="card-body">
           <ExpenseInput />
