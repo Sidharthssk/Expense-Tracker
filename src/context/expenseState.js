@@ -3,6 +3,7 @@ import ExpenseContext from "./expenseContext";
 const ExpenseState = (props) =>{
 
     let num = 1;
+    const host = "http://localhost:8000";
 
     const component = `<div class="input-group">
     <span class="input-group-text">Expense-Amount</span>
@@ -30,8 +31,24 @@ const ExpenseState = (props) =>{
     document.querySelector(".list-group").appendChild(li);
   };
 
+  const addExpense = async(expense_tag, amount) => {
+
+    console.log(JSON.stringify({expense_tag, amount}));
+
+    const response = await fetch(`${host}/api/expense/dailyexpense`,{
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json",
+        'auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0OGYyYzhkNjVlNTc5Yjk0NjY2ZTMwIn0sImlhdCI6MTY2NTc5NTg2OX0.0r97s-N2o92_WQbdRLZ8ekStRCVLTi5tbLbAJ8R9DjQ"
+      },
+      body: JSON.stringify({expense_tag, amount})
+    });
+    const json = await response.json();
+    console.log(json);
+  }
+
   return (
-    <ExpenseContext.Provider value={{addExpenseTag}}>
+    <ExpenseContext.Provider value={{addExpenseTag, addExpense}}>
         {props.children}
     </ExpenseContext.Provider>
   );

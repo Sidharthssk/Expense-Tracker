@@ -6,11 +6,25 @@ import ExpenseContext from "../context/expenseContext";
 function Card() {
 
     const context = useContext(ExpenseContext);
-    const {addExpenseTag} = context;
+    const {addExpenseTag, addExpense} = context;
+    let expense = [];
+    let amount = [];
 
     const handleClick = (e) =>{
         e.preventDefault();
         addExpenseTag()
+    }
+
+    const handleSubmit = () =>{
+      document.querySelectorAll(".Expense").forEach(function (element) {
+        expense.push(element.value);
+      });
+    
+      document.querySelectorAll(".Amount").forEach(function (element) {
+        amount.push(element.value);
+      });
+
+      addExpense(expense, amount);
     }
 
   return (
@@ -28,7 +42,7 @@ function Card() {
               </button>
             </div>
             <div className="col-6">
-              <button type="button" className="btn btn-success">
+              <button type="button" className="btn btn-success" onClick={handleSubmit}>
                 Submit
               </button>
             </div>
