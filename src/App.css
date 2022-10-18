@@ -6,6 +6,11 @@ body{
   height: 100vh;
 }
 
+.expenseCard .card-body{
+  max-height: 90vh;
+  overflow: auto;
+}
+
 .container-md{
   height: 100vh;
 }
