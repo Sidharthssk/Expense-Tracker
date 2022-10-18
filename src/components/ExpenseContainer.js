@@ -34,9 +34,11 @@ function ExpenseContainer() {
       <div className="card my-3 mx-3 expenseCard">
         <h2 className="card-header text-center">{monthName} month's Expenses</h2>
         <div className="card-body">
+          <div className="accordion" id="accordionExample">
             {expense.map((item,index) => {
               return <Accordion date={item.date} expense_tag={item.expenses.expense_tag} amount={item.expenses.amount} index={index} key={item._id} />
             })}
+          </div>
         </div>
         
       </div>
