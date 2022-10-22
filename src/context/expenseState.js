@@ -43,7 +43,11 @@ const ExpenseState = (props) =>{
       body: JSON.stringify({expense_tag, amount})
     });
     const json = await response.json();
-    setExpense(expense.concat(json));
+    if(json.id){
+      fetchExpenses();
+    }else{
+      setExpense(expense.concat(json.expense));
+    }
   }
 
   const fetchExpenses = async() =>{
