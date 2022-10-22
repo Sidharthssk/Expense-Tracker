@@ -31,7 +31,7 @@ function ExpenseContainer() {
       
   return (
     <>
-      <div className="card my-3 mx-3 expenseCard">
+      <div className="card my-5 expenseCard">
         <h2 className="card-header text-center">{monthName} month's Expenses</h2>
         <div className="card-body">
           <div className="accordion" id="accordionExample">
