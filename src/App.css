@@ -4,6 +4,7 @@
 
 body{
   height: 100vh;
+  background-color: rgb(49, 52, 66);
 }
 
 .expenseCard .card-body{
