@@ -28,7 +28,7 @@ function Card() {
     }
 
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <div className="card" >
         <h3 className="card-header">Enter Today's Expense</h3>
         <div className="card-body">
@@ -42,14 +42,14 @@ function Card() {
               </button>
             </div>
             <div className="col-6">
-              <button type="button" className="btn btn-success" onClick={handleSubmit}>
+              <button type="submit" className="btn btn-success">
                 Submit
               </button>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </form>
   );
 }
 
