@@ -6,7 +6,7 @@ function ExpenseInput() {
       <ul className="list-group list-group-flush">
         <li className="list-group-item">
           <div className="input-group">
-            <span className="input-group-text">Expense-Amount</span>
+            <span className="input-group-text w-sm-25 w-lg-50">Expense</span>
             <input
               type="text"
               placeholder="Expense"

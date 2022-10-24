@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import Accordion from './Accordion'
 import expenseContext from '../context/expenseContext';
+import {useNavigate} from 'react-router-dom';
 
 function ExpenseContainer() {
 
@@ -23,9 +24,15 @@ function ExpenseContainer() {
 
       const context = useContext(expenseContext);
       const {fetchExpenses, expense} = context;
+      const navigate = useNavigate();
 
       useEffect(()=>{
-        fetchExpenses();
+        if(localStorage.getItem('authToken')){
+          fetchExpenses();
+        }
+        else{
+          navigate('/login')
+        }
         // eslint-disable-next-line
       },[])
       
@@ -40,7 +47,9 @@ function ExpenseContainer() {
             })}
           </div>
         </div>
-        
+        <div className="card-footer">
+          
+        </div>
       </div>
     </>
   )

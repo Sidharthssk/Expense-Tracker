@@ -8,7 +8,7 @@ const ExpenseState = (props) =>{
     const [expense, setExpense] = useState([]);
 
     const component = `<div class="input-group">
-    <span class="input-group-text">Expense-Amount</span>
+    <span class="input-group-text w-sm-25 w-lg-50">Expense</span>
     <input
       type="text"
       placeholder="Expense"
@@ -38,7 +38,7 @@ const ExpenseState = (props) =>{
       method: 'POST',
       headers: {
         'Content-Type': "application/json",
-        'auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0OGYyYzhkNjVlNTc5Yjk0NjY2ZTMwIn0sImlhdCI6MTY2NTc5NTg2OX0.0r97s-N2o92_WQbdRLZ8ekStRCVLTi5tbLbAJ8R9DjQ"
+        'auth-token': localStorage.getItem('authToken')
       },
       body: JSON.stringify({expense_tag, amount})
     });
@@ -56,7 +56,7 @@ const ExpenseState = (props) =>{
       method: 'GET',
       headers: {
         'Content-Type': "application/json",
-        'auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0OGYyYzhkNjVlNTc5Yjk0NjY2ZTMwIn0sImlhdCI6MTY2NTc5NTg2OX0.0r97s-N2o92_WQbdRLZ8ekStRCVLTi5tbLbAJ8R9DjQ"
+        'auth-token': localStorage.getItem('authToken')
       },
     });
     const json = await response.json();

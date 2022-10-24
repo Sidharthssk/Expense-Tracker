@@ -3,23 +3,26 @@
 }
 
 body{
-  height: 100vh;
+  height: 100%;
   background-color: rgb(49, 52, 66);
 }
 
 .expenseCard .card-body{
-  max-height: 90vh;
+  max-height: 50vh;
   overflow: auto;
   min-height: 30vh;
 }
 
-.container-md{
-  height: 100vh;
+.Expense::placeholder{
+  font-size: 80%;
+}
+.Amount::placeholder{
+  font-size: 80%;
 }
 
 .container-md .row{
   width: 100%;
-  height: 100%;
+  margin: 0%;
 }
 
 .App-logo {
