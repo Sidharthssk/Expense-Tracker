@@ -4,7 +4,7 @@ import { useState } from "react";
 const ExpenseState = (props) =>{
 
     let num = 1;
-    const host = "http://localhost:8000";
+    const host = process.env.REACT_APP_HOST;
     const [expense, setExpense] = useState([]);
 
     const component = `<div class="input-group">
@@ -34,7 +34,7 @@ const ExpenseState = (props) =>{
   };
 
   const addExpense = async(expense_tag, amount) => {
-    const response = await fetch(`${host}/api/expense/dailyexpense`,{
+    const response = await fetch(`http://${host}${process.env.REACT_APP_CREATE_EXPENSE}`,{
       method: 'POST',
       headers: {
         'Content-Type': "application/json",
@@ -52,7 +52,7 @@ const ExpenseState = (props) =>{
   }
 
   const fetchExpenses = async() =>{
-    const response = await fetch(`${host}/api/expense/fetchdailyexpense`, {
+    const response = await fetch(`http://${host}${process.env.REACT_APP_FETCHEXPENSE}`, {
       method: 'GET',
       headers: {
         'Content-Type': "application/json",
