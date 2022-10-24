@@ -3,10 +3,24 @@ import Card from "./Card";
 import ExpenseContainer from "./ExpenseContainer";
 
 function Home() {
+
+  let i = 0;
+  const header = (text)=>{
+    text = text.split("");
+    let heading = "";
+    const id = setInterval(()=>{
+      if(i===(text.length-1)){
+        clearInterval(id);
+      }
+      heading += text[i];
+      document.getElementById('mainHeading').innerHTML = heading;
+      i++
+    },200)
+  }
   return (
     <>
       <div className="container-md text-center" style={{height: "90%"}}>
-        <h1 className="mt-3" id="mainHeading" style={{color: "white"}}>Welcome to Expense Tracker....</h1>
+        <h1 className="mt-3" id="mainHeading" style={{color: "white"}}>{header("Welcome to Expense Tracker....")}</h1>
         <h3 className="my-3" style={{color: "white"}}>The place where you can keep a track of your expense efficiently</h3>
         <div className="row d-flex align-items-md-center justify-content-center " >
           <div className="col mx-lg-5 my-3">

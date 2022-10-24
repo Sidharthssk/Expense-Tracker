@@ -46,7 +46,7 @@ function Login() {
           onChange={onChange}
           name="email"
           required
-          autocomplete="off"
+          autoComplete="off"
         />
       </div>
       <div className="input-group mb-3" id="basic-addon3">
