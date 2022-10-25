@@ -9,7 +9,7 @@ function Login() {
   const handleSubmit = async(e)=>{
     e.preventDefault()
 
-    const response = await fetch(`http://${host}${process.env.REACT_APP_LOGIN_URL}`,{
+    const response = await fetch(`${host}${process.env.REACT_APP_LOGIN_URL}`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

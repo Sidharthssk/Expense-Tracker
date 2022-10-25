@@ -12,7 +12,7 @@ function Signup() {
 
         console.log(JSON.stringify({name: credentials.name, email: credentials.email, password: credentials.password}))
 
-        const response = await fetch(`http://${host}${process.env.REACT_APP_SIGNUP_URL}`,{
+        const response = await fetch(`${host}${process.env.REACT_APP_SIGNUP_URL}`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -34,7 +34,7 @@ const ExpenseState = (props) =>{
   };
 
   const addExpense = async(expense_tag, amount) => {
-    const response = await fetch(`http://${host}${process.env.REACT_APP_CREATE_EXPENSE}`,{
+    const response = await fetch(`${host}${process.env.REACT_APP_CREATE_EXPENSE}`,{
       method: 'POST',
       headers: {
         'Content-Type': "application/json",
@@ -52,7 +52,7 @@ const ExpenseState = (props) =>{
   }
 
   const fetchExpenses = async() =>{
-    const response = await fetch(`http://${host}${process.env.REACT_APP_FETCHEXPENSE}`, {
+    const response = await fetch(`${host}${process.env.REACT_APP_FETCHEXPENSE}`, {
       method: 'GET',
       headers: {
         'Content-Type': "application/json",
