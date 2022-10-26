@@ -15,7 +15,10 @@ function Card() {
         addExpenseTag()
     }
 
-    const handleSubmit = () =>{
+    const handleSubmit = (e) =>{
+
+      e.preventDefault();
+      
       document.querySelectorAll(".Expense").forEach(function (element) {
         expense.push(element.value);
       });
