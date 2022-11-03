@@ -33,6 +33,11 @@ function Navbar() {
                   Home
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/expenseViewer">
+                  Expense-Viewer
+                </Link>
+              </li>
             </ul>
             {!localStorage.getItem('authToken')?<form className="d-flex" role="search">
             <Link className="btn btn-primary mx-2" role="button" to="/login">Login</Link>

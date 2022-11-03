@@ -1,0 +1,83 @@
+
+.mainContainer {
+	margin: 15px auto;
+	padding: 70px;
+	max-width: 850px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	color: #666d78;
+	font-size: 16px;
+}
+
+section h1{
+	font-family: 'Dancing Script', cursive;
+}
+
+.tableHolder{
+	margin: 20px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}
+/* 
+img{
+  width:300px;
+}
+
+address{
+  margin-top: 20px;
+}
+
+.invoiced_to {
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 4px;
+}
+
+thead {
+	background-color: rgba(0, 0, 0, 0.03);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+tbody tr{
+  border-bottom: solid thin #f8f8fa;
+}
+
+.table th {
+	height: 35px;
+}
+.table td {
+	padding: 5px;
+  height: 30px;
+	text-align: center;
+}
+
+.table th:nth-child(1),
+.table td:nth-child(1) {
+	width: 70%;
+}
+
+.table td.footer-text {
+	background-color: #f8f8fa !important;
+	padding: 4px;
+	text-align: right;
+}
+
+button {
+	padding: 10px 25px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-family: Lato;
+	border: none;
+	background-color: #00a5e4;
+	line-height: 16px;
+	color: #fff;
+	outline: none;
+	float: right;
+} */
