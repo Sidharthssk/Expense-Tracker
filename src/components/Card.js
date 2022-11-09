@@ -28,13 +28,20 @@ function Card() {
       });
 
       addExpense(expense, amount);
+      
+      // Delete all the input fields
+      document.querySelectorAll(".expense-input").forEach(function (element) {
+        element.remove();
+      });
+
+      addExpenseTag();
     }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form >
       <div className="card" >
         <h3 className="card-header">Enter Today's Expense</h3>
-        <div className="card-body">
+        <div className="card-body ">
           <ExpenseInput />
         </div>
         <div className="card-footer">
@@ -45,7 +52,7 @@ function Card() {
               </button>
             </div>
             <div className="col-6">
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-success" onClick={handleSubmit}>
                 Submit
               </button>
             </div>

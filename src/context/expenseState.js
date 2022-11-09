@@ -28,7 +28,7 @@ const ExpenseState = (props) =>{
 
   const addExpenseTag = () => {
     const li = document.createElement("li");
-    li.className = "list-group-item";
+    li.className = "list-group-item expense-input";
     li.innerHTML = component;
     document.querySelector(".list-group").appendChild(li);
   };

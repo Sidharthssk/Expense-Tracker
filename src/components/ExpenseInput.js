@@ -4,7 +4,7 @@ function ExpenseInput() {
   return (
     <>
       <ul className="list-group list-group-flush">
-        <li className="list-group-item">
+        <li className="list-group-item expense-input">
           <div className="input-group">
             <span className="input-group-text w-sm-25 w-lg-50">Expense</span>
             <input
