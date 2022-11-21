@@ -1,12 +1,22 @@
-import React from "react";
+import React, {useEffect,useContext} from "react";
 import {Link, useNavigate} from "react-router-dom";
+import userContext from "../context/userContext";
 
 function Navbar() {
   const navigate = useNavigate();
+  const context = useContext(userContext);
+  let {user, getUserData} = context;
+
   const handleLogout = ()=>{
     localStorage.removeItem('authToken');
     navigate('/login');
   }
+
+  useEffect(()=>{
+    if(localStorage.getItem('authToken')){
+      getUserData();
+    }
+  },[localStorage.getItem('authToken')]);
 
   return (
     <div style={{height: "10%"}}>
@@ -43,6 +53,10 @@ function Navbar() {
             <Link className="btn btn-primary mx-2" role="button" to="/login">Login</Link>
             <Link className="btn btn-primary mx-2" role="button" to="/signup">Sign Up</Link>
             </form>:<button className="btn btn-primary" role="button" onClick={handleLogout}>Log Out</button>}
+
+            {user && <div className="d-flex align-items-center">
+            <button type="button" class="btn btn-primary mx-2 rounded-circle">{user.name[0]}</button>
+            </div>}
           </div>
         </div>
       </nav>

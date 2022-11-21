@@ -63,6 +63,8 @@ const ExpenseState = (props) =>{
     setExpense(json);
   }
 
+  
+
   return (
     <ExpenseContext.Provider value={{addExpenseTag, addExpense, fetchExpenses, expense}}>
         {props.children}
