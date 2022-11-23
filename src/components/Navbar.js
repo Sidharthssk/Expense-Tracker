@@ -16,6 +16,7 @@ function Navbar() {
     if(localStorage.getItem('authToken')){
       getUserData();
     }
+    // eslint-disable-next-line
   },[localStorage.getItem('authToken')]);
 
   return (
