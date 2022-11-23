@@ -23,6 +23,9 @@ function Login() {
       localStorage.setItem('authToken', json.authToken);
       navigate('/');
     }
+    else{
+        document.querySelector('.error-message').innerHTML = json.error;
+    }
   }
 
   const onChange = (e)=>{
@@ -32,7 +35,7 @@ function Login() {
     <div className="container d-flex flex-column justify-content-center align-items-center" style={{height: "80%"}}>
         <h3 style={{color: "white"}}>Please Log In to continue...</h3>
     <form className="my-3 d-flex flex-column align-items-center justify-content-center p-3 p-lg-5 " style={{backgroundColor:"rgba(0,0,0,0.4)"}} onSubmit={handleSubmit}>
-      
+      <div className='error-message mb-3' style={{color: "red"}}></div>
       <div className="input-group mb-3">
         <span className="input-group-text" id="basic-addon2">
           @example.com
