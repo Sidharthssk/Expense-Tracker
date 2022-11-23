@@ -51,6 +51,7 @@ function Signup() {
           value={credentials.name}
           onChange={onChange}
           name="name"
+          autoComplete="off"
           required
         />
       </div>
@@ -66,6 +67,7 @@ function Signup() {
           aria-describedby="basic-addon2"
           value={credentials.email}
           onChange={onChange}
+          autoComplete="off"
           name="email"
           required
         />

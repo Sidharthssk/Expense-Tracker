@@ -8,16 +8,29 @@ import Signup from './components/Signup';
 import HtmlToPdf from './components/HtmlToPdf';
 import Profile from './components/Profile';
 import UserState from './context/userState';
+import Alert from "./components/Alert";
+import { useState } from "react";
 
 function App() {
+  const [alert, setAlert] = useState(null);
+  const [user, setUser] = useState(null);
+  const showAlert = (user) =>{
+    setAlert(true);
+    setUser(user);
+    setTimeout(() => {
+      setAlert(null);
+      setUser(null);
+    }, 20000);
+  }
   return (
     <>
     <ExpenseState>
       <UserState>
       <Router>
         <Navbar />
+        <Alert alert={alert} user={user}/>
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route exact path='/' element={<Home showAlert={showAlert}/>} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/signup' element={<Signup />} />
           <Route exact path='/expenseViewer' element={<HtmlToPdf />} />

@@ -38,7 +38,7 @@ function Profile() {
     if(additionalEmail){
       emailList.push(additionalEmail);
     }
-    editUserData(userInfo.name, userInfo.email, emailList);
+    editUserData(userInfo.name, userInfo.email,userInfo.expenseLimit, emailList);
     getUserData();
   };
 

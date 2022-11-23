@@ -1,12 +1,15 @@
 import React, {useContext} from "react";
 import ExpenseInput from "./ExpenseInput";
 import ExpenseContext from "../context/expenseContext";
+import userContext from "../context/userContext";
 
-
-function Card() {
+function Card(props) {
 
     const context = useContext(ExpenseContext);
+    const context1 = useContext(userContext);
     const {addExpenseTag, addExpense} = context;
+    const {user, getUserData} = context1;
+    const {showAlert} = props;
     let expense = [];
     let amount = [];
 
@@ -15,7 +18,7 @@ function Card() {
         addExpenseTag()
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
 
       e.preventDefault();
       
@@ -28,6 +31,12 @@ function Card() {
       });
 
       addExpense(expense, amount);
+
+      await getUserData();
+      await user;
+      if(user.totalExpense > user.expenseLimit){
+        showAlert(user.name);
+      }
       
       // Delete all the input fields
       document.querySelectorAll(".expense-input").forEach(function (element) {

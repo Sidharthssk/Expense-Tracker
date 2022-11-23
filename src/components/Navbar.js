@@ -54,8 +54,8 @@ function Navbar() {
             <Link className="btn btn-primary mx-2" role="button" to="/signup">Sign Up</Link>
             </form>:<button className="btn btn-primary" role="button" onClick={handleLogout}>Log Out</button>}
 
-            {user && <div className="d-flex align-items-center">
-            <button type="button" class="btn btn-primary mx-2 rounded-circle">{user.name[0]}</button>
+            {localStorage.getItem('authToken') && user && <div className="d-flex align-items-center">
+            <Link to="/profile" type="button" className="btn btn-primary mx-2 rounded-circle">{user.name[0]}</Link>
             </div>}
           </div>
         </div>
