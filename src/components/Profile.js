@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import userContext from "../context/userContext";
-import {useNavigate} from 'react-router-dom';
 
 function Profile() {
   const context = useContext(userContext);
   const { user, getUserData, editUserData } = context;
-  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
@@ -41,7 +39,6 @@ function Profile() {
     }
     editUserData(userInfo.name, userInfo.email,userInfo.expenseLimit, emailList);
     getUserData();
-    navigate('/profile');
   };
 
   const onChange = (e) => {
