@@ -50,7 +50,7 @@ function Profile() {
 
   return (
     <div className="container text-bg-light p-5 my-4 rounded">
-      <form action="">
+      <form >
 
       <div className="mb-3 row">
         <label htmlFor="exampleFormControlInput1" className="form-label col">
