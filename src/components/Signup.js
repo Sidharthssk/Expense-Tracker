@@ -10,8 +10,6 @@ function Signup() {
     const handleSubmit = async(e)=>{
         e.preventDefault();
 
-        console.log(JSON.stringify({name: credentials.name, email: credentials.email, password: credentials.password}))
-
         const response = await fetch(`${host}${process.env.REACT_APP_SIGNUP_URL}`,{
             method: 'POST',
             headers: {

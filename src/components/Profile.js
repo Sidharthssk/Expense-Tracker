@@ -31,13 +31,15 @@ function Profile() {
       "form-control w-50 d-inline add-email";
   };
 
-  const handleSave = () => {
+  const handleSave = async() => {
     const additionalEmail = document.querySelector(".add-email").value;
     const emailList = user.emailList;
     if(additionalEmail){
       emailList.push(additionalEmail);
     }
-    editUserData(userInfo.name, userInfo.email,userInfo.expenseLimit, emailList);
+    await editUserData(userInfo.name, userInfo.email,userInfo.expenseLimit, emailList);
+    document.querySelector(".add-email").value = "";
+    document.querySelector(".add-email").className = "form-control w-50 d-none add-email"
     getUserData();
   };
 
@@ -47,7 +49,7 @@ function Profile() {
 
   return (
     <div className="container text-bg-light p-5 my-4 rounded">
-      <form >
+      
 
       <div className="mb-3 row">
         <label htmlFor="exampleFormControlInput1" className="form-label col">
@@ -129,11 +131,11 @@ function Profile() {
           id="exampleFormControlInput1"
           placeholder="name@example.com"
         ></input>
-        <button type="submit" className="btn btn-success" onClick={handleSave}>
+        <button type="button" className="btn btn-success" onClick={handleSave}>
           Save
         </button>
       </div>
-      </form>
+      
     </div>
   );
 }
