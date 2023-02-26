@@ -47,7 +47,7 @@ const ExpenseState = (props) =>{
     if(json.id){
       fetchExpenses();
     }else{
-      setExpense(expense.concat(json));
+      setExpense(expense.concat(json.expense));
     }
   }
 

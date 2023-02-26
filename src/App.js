@@ -14,6 +14,11 @@ import { useState } from "react";
 function App() {
   const [alert, setAlert] = useState(null);
   const [user, setUser] = useState(null);
+
+  function alertClosed(){
+    window.location.reload();
+  }
+
   const showAlert = (user) =>{
     setAlert(true);
     setUser(user);
@@ -22,13 +27,14 @@ function App() {
       setUser(null);
     }, 20000);
   }
+
   return (
     <>
     <ExpenseState>
       <UserState>
       <Router>
         <Navbar />
-        <Alert alert={alert} user={user}/>
+        <Alert alert={alert} user={user} onClose={alertClosed}/>
         <Routes>
           <Route exact path='/' element={<Home showAlert={showAlert}/>} />
           <Route exact path='/login' element={<Login />} />
