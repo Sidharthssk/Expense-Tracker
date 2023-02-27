@@ -49,6 +49,11 @@ function Navbar() {
                   Expense-Viewer
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/visualizeExpense">
+                  Line Chart
+                </Link>
+              </li>
             </ul>
             {!localStorage.getItem('authToken')?<form className="d-flex" role="search">
             <Link className="btn btn-primary mx-2" role="button" to="/login">Login</Link>

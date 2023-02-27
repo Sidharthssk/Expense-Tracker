@@ -9,6 +9,7 @@ import HtmlToPdf from './components/HtmlToPdf';
 import Profile from './components/Profile';
 import UserState from './context/userState';
 import Alert from "./components/Alert";
+import LineChart from './components/LineChart';
 import { useState } from "react";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route exact path='/signup' element={<Signup />} />
           <Route exact path='/expenseViewer' element={<HtmlToPdf />} />
           <Route exact path='/profile' element={<Profile />} />
+          <Route exact path='/visualizeExpense' element={<LineChart />} />
         </Routes>
       </Router>
       </UserState>

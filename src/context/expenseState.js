@@ -6,6 +6,7 @@ const ExpenseState = (props) =>{
     let num = 1;
     const host = process.env.REACT_APP_HOST;
     const [expense, setExpense] = useState([]);
+    const [monthlyExpense, setMonthlyExpense] = useState();
 
     const component = `<div class="input-group">
     <span class="input-group-text w-sm-25 w-lg-50">Expense</span>
@@ -63,10 +64,20 @@ const ExpenseState = (props) =>{
     setExpense(json);
   }
 
-  
+  const fetchMonthlyExpense = async() =>{
+    const response = await fetch(`${host}${process.env.REACT_APP_FETCHMONTHLYEXPENSE}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': "application/json",
+        'auth-token': localStorage.getItem('authToken')
+      },
+    });
+    const json = await response.json();
+    setMonthlyExpense(json);
+  }
 
   return (
-    <ExpenseContext.Provider value={{addExpenseTag, addExpense, fetchExpenses, expense}}>
+    <ExpenseContext.Provider value={{addExpenseTag, addExpense, fetchExpenses, expense, fetchMonthlyExpense, monthlyExpense}}>
         {props.children}
     </ExpenseContext.Provider>
   );
