@@ -87,12 +87,14 @@ function LineChart(props) {
   };
 
   return (
-    <div className='container'>
-    {
-      monthlyExpense && Array.isArray(data.labels) && Array.isArray(data.datasets[0].data) ?
-        <Line data={data} options={options}/>
-        : <h1>Loading...</h1>
-    }
+    <div className='container position-absolute top-50 start-50 translate-middle'>
+      <div className='d-flex justify-content-center align-items-center'>
+        {
+          monthlyExpense && Array.isArray(data.labels) && Array.isArray(data.datasets[0].data) ?
+            <Line data={data} options={options}/>
+            : <h1>Loading...</h1>
+        }
+      </div>
     </div>
   )
 }
