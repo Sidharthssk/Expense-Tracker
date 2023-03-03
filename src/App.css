@@ -4,7 +4,11 @@
 
 body{
   height: 100%;
-  background-color: rgb(49, 52, 66);
+  /* background-color: rgb(49, 52, 66); */
+  background-image: url("../Images/1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .expenseCard .card-body{
