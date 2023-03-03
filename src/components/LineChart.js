@@ -58,11 +58,39 @@ function LineChart(props) {
     }
   },[monthlyExpense]);
 
+  const options = {
+    scales: {
+      x: {
+        grid: {
+          color: 'rgba(255, 255, 255, 0.2)',
+        },
+        ticks: {
+          color: 'white',
+        },
+      },
+      y: {
+        grid: {
+          color: 'rgba(255, 255, 255, 0.2)',
+        },
+        ticks: {
+          color: 'white',
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          color: 'white',
+        },
+      },
+    },
+  };
+
   return (
     <div className='container'>
     {
       monthlyExpense && Array.isArray(data.labels) && Array.isArray(data.datasets[0].data) ?
-        <Line data={data} />
+        <Line data={data} options={options}/>
         : <h1>Loading...</h1>
     }
     </div>
