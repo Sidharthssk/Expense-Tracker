@@ -22,3 +22,4 @@ Students can use this website to keep track of their daily expense and they can 
   5.  Install the dependencies of the backend the same way
   6.  `npm run both` - To run both backend and front end using [concurrently](https://www.npmjs.com/package/concurrently)
   
+You can find the deployed website here : https://dailyexpensekeeper.netlify.app 
